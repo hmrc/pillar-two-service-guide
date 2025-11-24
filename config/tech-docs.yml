@@ -1,5 +1,5 @@
 # Human read-able name for this site, displayed in the header bar
-service_name: Pillar Two Service Guide (SDES) - Service Name
+service_name: Secure Data Exchange Service (SDES) - Pillar 2 Service Guide
 
 # The route that will be used to access this site (with tailing slash)
 service_link: /guides/pillar-two-service-guide/

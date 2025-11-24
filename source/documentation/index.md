@@ -3,7 +3,7 @@ title: Pillar Two Service Guide (SDES) Banner
 weight: 1
 ---
 
-# Pillar Two Service Guide (SDES) H1
+# Using the Secure Data Exchange Service (SDES) to Submit GIR for Pillar 2 agreement service guide
 
 
 ## Overview
@@ -100,7 +100,7 @@ All files must be submitted in a .xml format.
 Alternative formats may upload to SDES but will fail at the validation stage.
 
 ### File validation
-Files are checked to ensure they contain the expected data and structure. We recommend reading the OECD Schema and Business/Model Rules and UK specific Business/ Schema, part of the Pillar 2 API Service Guide. 
+Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD Schema and Business/Model Rules](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/) and [UK specific Business/ Schema](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/), part of the Pillar 2 API Service Guide. 
 
 ## Endpoints and notifications
 Notifications inform users when a file’s status changes, if they are registered for SDES and linked to an organisation’s transfer. These alerts are sent by email by default or can be set up as a callback notification.
@@ -171,9 +171,9 @@ Notifies the user when the file transfer has failed, including the reason for fa
 ## Terms of use
 All organisations and their nominated personnel who are using HMRC’s SDES File Upload API are subject to the following terms of use:
 
-* [SDES terms and conditions]()
-* [Developer Hub terms and conditions]()
-* [Developer Hub terms of use]()
+* [SDES terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
+* [Developer Hub terms and conditions](https://developer.service.hmrc.gov.uk/api-documentation/docs/help/terms-and-conditions)
+* [Developer Hub terms of use](https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use)
 
 ## Getting help
 
