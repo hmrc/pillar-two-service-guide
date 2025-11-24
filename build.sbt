@@ -1,4 +1,4 @@
-val appName = "service-guide-skeleton"
+val appName = "pillar-two-service-guide"
 
 scalaVersion := "2.13.16"
 

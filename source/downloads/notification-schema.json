@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "SDES Callback Notification schema",
+  "description": "SDES Callback Notification schema",
+  "default": {},
+  "examples": [
+    {
+      "notification": "FileReady",
+      "filename": "axyz.doc",
+      "checksumAlgorithm": "MD5",
+      "checksum": "c6779ec2960296ed9a04f08d67f64422",
+      "correlationID": "545d0831-d4ba-408d-b1f1-f4645efb32fd",
+      "availableUntil": "2021-01-06T10:01:00.889Z",
+      "dateTime": "2021-01-01T10:01:00.889Z",
+      "actionRequired": "DOWNLOAD",
+      "properties": [
+        {
+          "name": "name1",
+          "value": "value1"
+        },
+        {
+          "name": "name2",
+          "value": "value2"
+        }
+      ]
+    }
+  ],
+  "required": [
+    "notification",
+    "filename",
+    "correlationID",
+    "dateTime"
+  ],
+  "properties": {
+    "notification": {
+      "$id": "#/properties/notification",
+      "default": "",
+      "description": "The type of notification.",
+      "examples": [
+        "FileReady"
+      ],
+      "title": "The type of notification",
+      "oneOf": [
+        {
+          "const": "FileReady",
+          "title": "FileReady",
+          "description": "File is ready for collection"
+        },
+        {
+          "const": "FileReceived",
+          "title": "FileReceived",
+          "description": "The file uploaded has passed virus scan and other integrity checks and securely stored in SDES"
+        },
+        {
+          "const": "FileProcessingFailure",
+          "title": "FileProcessingFailure",
+          "description": "There was an error processing the file. The details of the error  is specified in the failure reason"
+        },
+        {
+          "const": "FileProcessed",
+          "title": "FileProcessed",
+          "description": "The file has now been delivered to the HMRC recipient"
+        }
+      ],
+      "type": "string"
+    },
+    "filename": {
+      "$id": "#/properties/filename",
+      "type": "string",
+      "title": "The filename schema",
+      "description": "The name of the file the notification relates to",
+      "default": "",
+      "examples": [
+        "axyz.doc"
+      ]
+    },
+    "correlationID": {
+      "$id": "#/properties/correlationID",
+      "type": "string",
+      "title": "The correlationID for the Transfer",
+      "description": "The name of the correlationID the transfer",
+      "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+      "default": "",
+      "examples": [
+        "545d0831-d4ba-408d-b1f1-f4645efb32fd"
+      ]
+    },
+    "checksumAlgorithm": {
+      "$id": "#/properties/checksumAlgorithm",
+      "default": "",
+      "description": "The applicable checksum algorithm.",
+      "examples": [
+        "MD5"
+      ],
+      "title": "The checksumAlgorithm of the file",
+      "enum": [
+        "MD5",
+        "SHA-512",
+        "SHA-256"
+      ],
+      "type": "string"
+    },
+    "checksum": {
+      "$id": "#/properties/checksum",
+      "type": "string",
+      "title": "The checksum schema",
+      "description": "The checksum of the file",
+      "default": "",
+      "examples": [
+        "c6779ec2960296ed9a04f08d67f64422"
+      ]
+    },
+    "availableUntil": {
+      "$id": "#/properties/availableUntil",
+      "type": "string",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+      "title": "The availableUntil schema",
+      "description": "The file will be available for download until this date",
+      "default": "",
+      "examples": [
+        "2021-01-06T10:01:00.889Z"
+      ]
+    },
+    "failureReason": {
+      "$id": "#/properties/failureReason",
+      "type": "string",
+      "title": "The failureReason schema",
+      "description": "The reason for the failure",
+      "default": "",
+      "examples": [
+        "File Failed Virus Check"
+      ]
+    },
+    "dateTime": {
+      "$id": "#/properties/dateTime",
+      "type": "string",
+      "title": "The dateTime schema",
+      "description": "Date and time the notification was generated",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+      "default": "",
+      "examples": [
+        "2021-01-01T10:01:00.889Z"
+      ]
+    },
+    "downloadURL": {
+      "$id": "#/properties/downloadURL",
+      "type": "string",
+      "title": "The URL that can be used to download a file",
+      "description": "The URL that can be used to download a file. Only generated for a FileReady notification where appropriate",
+      "default": "",
+      "examples": [
+        "https://hmrcdomain.com/unique-file-identifier"
+      ]
+    },
+    "actionRequired": {
+      "$id": "#/properties/actionRequired",
+      "default": "",
+      "examples": [
+        "NONE"
+      ],
+      "title": "Action required",
+      "type": "string",
+      "description": "The action the recipient is required to take upon receipt of this notification",
+      "oneOf": [
+        {
+          "const": "NONE",
+          "title": "NONE",
+          "description": "No action required"
+        },
+        {
+          "const": "RETRY",
+          "title": "RETRY",
+          "description": "Retry the previous action"
+        },
+        {
+          "const": "ADDRESS-FAILURE-THEN-RETRY",
+          "title": "ADDRESS-FAILURE-THEN-RETRY",
+          "description": "Address the details specified in the failure reason before attempting the action again"
+        },
+        {
+          "const": "CONTACT-HMRC",
+          "title": "CONTACT-HMRC",
+          "description": "Contact the SDES support team"
+        },
+        {
+          "const": "DOWNLOAD",
+          "title": "DOWNLOAD",
+          "description": "Download the file using the filename (for FTPS) or the downloadURL provided"
+        }
+      ]
+    },
+    "properties": {
+      "$id": "#/properties/properties",
+      "default": [],
+      "description": "Name value pair of any properties associated with the file",
+      "examples": [
+        [
+          {
+            "name": "name1",
+            "value": "value1"
+          },
+          {
+            "name": "name2",
+            "value": "value2"
+          }
+        ]
+      ],
+      "title": "Properties",
+      "type": "array",
+      "additionalItems": false,
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/properties/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/properties/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "name": "name1",
+                "value": "value1"
+              }
+            ],
+            "required": [
+              "name",
+              "value"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/properties/items/anyOf/0/properties/name",
+                "type": "string",
+                "title": "Name",
+                "description": "The name of the property",
+                "default": "",
+                "examples": [
+                  "name1"
+                ]
+              },
+              "value": {
+                "$id": "#/properties/properties/items/anyOf/0/properties/value",
+                "type": "string",
+                "title": "Value",
+                "description": "The value of the property",
+                "default": "",
+                "examples": [
+                  "value1"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
