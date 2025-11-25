@@ -2,7 +2,7 @@
 service_name: Secure Data Exchange Service (SDES) - Pillar 2 Service Guide
 
 # The route that will be used to access this site (with tailing slash)
-service_link: /guides/fts-pillar2-service-guide/
+service_link: /guides/pillar2-sdes-service-guide/
 use_service_link_for_favicon: true
 
 # ================================================
