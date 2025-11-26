@@ -165,7 +165,6 @@ Notifies the user when the file transfer has failed, including the reason for fa
 
 * <a href="/guides/pillar2-sdes-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
 * [Pillars 2 API Service Guide](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/)
-* [UK Validation Schema]()
 
 
 ## Terms of use
