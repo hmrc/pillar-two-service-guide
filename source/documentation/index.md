@@ -54,7 +54,7 @@ You can test the File Upload API integration with your software in the sandbox e
 
 To transfer live files you will need:
 
-* **Service Reference Number (SRN)** to identify your organisation in the system transfer
+* **Pillar 2 ID** to identify your organisation in the system transfer
 * **an information type value** to connect your system transfer to HMRC
 * **a submission URL** generated through the Secure Data Exchange File Upload API
 * **the GIR XML file** to upload and validate through the Secure Data Exchange File Upload API
@@ -65,7 +65,7 @@ To get this information and production credentials to transfer files, you must r
 
 Follow these steps to get access to use HMRC APIs
 
-1. **Register for the Secure Data Exchange Service (SDES)**. Email [OECDPillar2TPSnew@hmrc.gov.uk](mailto:OECDPillar2TPSnew@hmrc.gov.uk) to request an invitation code to register for SDES. Follow the instructions emailed to you with the invitation code.
+1. **Register for Pillar 2**. Each Multinational Enterprises (MNE) must [register for Pillar 2](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1).
 
 2. **Register for the Developer Hub**. You must register with the HMRC Developer Hub to access and set up automated data exchanges with SDES. The SDES ‘File Upload’ API can be found in the ‘Other’ category in ‘API documentation’. [Register with the HMRC Developer Hub](https://developer.service.hmrc.gov.uk/developer/registration)
 
@@ -103,7 +103,7 @@ Alternative formats may upload to SDES but will fail at the validation stage.
 Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD Schema and Business/Model Rules](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/) and [UK specific Business/ Schema](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/), part of the Pillar 2 API Service Guide. 
 
 ## Endpoints and notifications
-Notifications inform users when a file’s status changes, if they are registered for SDES and linked to an organisation’s transfer. These alerts are sent by email by default or can be set up as a callback notification.
+Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default or can be set up as a callback notification.
 
 ### Endpoints
 The File Upload API must include the following HTTPS RESTful endpoints to send notifications to users:
@@ -127,7 +127,7 @@ This notification tells the user that a file uploaded to or pulled by SDES has b
 ```json
 {
   "notification": "FileReceived",
-  "filename": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d.zip",
+  "filename": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d.xml",
   "checksumAlgorithm": "md5",
   "checksum": "894bed34007114b82fa39e05197f9eec",
   "correlationID": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d",
@@ -151,7 +151,7 @@ Notifies the user when the file transfer has failed, including the reason for fa
 ```json
 {
   "notification": "FileProcessingFailure",
-  "filename": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d.zip",
+  "filename": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d.xml",
   "checksumAlgorithm": "md5",
   "checksum": "894bed34007114b82fa39e05197f9eec",
   "correlationID": "32f2c4f7-c635-45e0-bee2-0bdd97a4a70d",

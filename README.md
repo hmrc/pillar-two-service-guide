@@ -5,6 +5,9 @@
 This repository contains the source files that are used to generate the Pillar 2 Service Guide for how to use the SDES File Upload API
 on the HMRC Developer Hub.
 
+Note: This was created by copying the latest [service-guide-skeleton](https://github.com/hmrc/service-guide-skeleton) in
+accordance with the [MDTP Handbook](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/create-and-manage-a-developer-hub-api/research-and-document-an-alpha-api/create-a-service-guide-and-roadmap.html).
+
 ## Editing Service Guide pages
 
 Template files are located in `./source/documentation`. All pages are written in [Markdown](https://en.wikipedia.org/wiki/Markdown).
