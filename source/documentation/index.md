@@ -99,14 +99,24 @@ All files must be submitted in a .xml format.
 
 Alternative formats may upload to SDES but will fail at the validation stage.
 
+### Mandatory metadata
+When generating the upload URL the request must include the following metadata:
+
+```json
+{
+  "key":"subscriptionIdentifier",
+  "value":"(unique Pillar 2 ID)"
+}
+```
+
 ### File validation
 Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD Schema and Business/Model Rules](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/) and [UK specific Business/ Schema](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/), part of the Pillar 2 API Service Guide. 
 
 ## Endpoints and notifications
-Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default or can be set up as a callback notification.
+Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default. You can set up a RESTful endpoint (see below) to receive callback notifications.
 
 ### Endpoints
-The File Upload API must include the following HTTPS RESTful endpoints to send notifications to users:
+Your endpoint must adhere to the following rules:
 
 * URL → Any Rest complaint URL e.g. https://mydomain.com/sdes-callback
 * HTTP Method → POST
