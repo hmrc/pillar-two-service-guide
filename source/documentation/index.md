@@ -55,7 +55,6 @@ You can test the File Upload API integration with your software in the sandbox e
 To transfer live files you will need:
 
 * **Pillar 2 ID** to identify your organisation in the system transfer
-* **an information type value** to connect your system transfer to HMRC
 * **a submission URL** generated through the Secure Data Exchange File Upload API
 * **the GIR XML file** to upload and validate through the Secure Data Exchange File Upload API
 
@@ -104,7 +103,7 @@ When generating the upload URL the request must include the following metadata:
 
 ```json
 {
-  "key":"subscriptionIdentifier",
+  "key":"subscriptionID",
   "value":"(unique Pillar 2 ID)"
 }
 ```
