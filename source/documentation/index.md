@@ -1,5 +1,5 @@
 ---
-title: Secure Data Exchange Service (SDES) - Pillar 2 Service Guide
+title: Transferring files to HMRC – Pillar 2 Service Guide
 weight: 1
 ---
 
@@ -42,7 +42,7 @@ The UK participates in the exchange of GIR information with willing partner juri
 
 **Related documentation:**
 
-* <a href="/guides/pillar2-file-transfer-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
 * [OECDPillar2 GloBE Information Return XML Schema](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/01/globe-information-return-pillar-two-xml-schema_3980638f/c594935a-en.pdf)
 * [OECD Pillar2 GloBE Model Rules](https://www.oecd.org/en/publications/tax-challenges-arising-from-digitalisation-of-the-economy-global-anti-base-erosion-model-rules-pillar-two_782bac33-en.html)
 
@@ -173,14 +173,14 @@ Notifies the user when the file transfer has failed, including the reason for fa
 
 **Related documents:**
 
-* <a href="/guides/pillar2-file-transfer-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
 * [Pillars 2 API Service Guide](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/)
 
 
 ## Terms of use
 All organisations and their nominated personnel who are using HMRC’s File Upload are subject to the following terms of use:
 
-* [SDES terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
+* [Terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
 * [Developer Hub terms and conditions](https://developer.service.hmrc.gov.uk/api-documentation/docs/help/terms-and-conditions)
 * [Developer Hub terms of use](https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use)
 
