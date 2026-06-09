@@ -1,0 +1,81 @@
+openapi: 3.0.4
+info:
+  title: FTS Callback Notitfication API Specification
+  description: |-
+    This is the FTS Callback notification used to inform a 3rd party about the status of a file transfer
+
+  contact:
+    email: sdessupport@hmrc.gov.uk
+  version: 1.0.0
+
+servers:
+  - url: https://your.server.com
+paths:
+  /your-restful-endpoint-path:
+    post:
+      tags:
+        - FTS callback notification
+      summary: Receive a call back about the status of your file.
+      description: Receive a call back about the status of your file
+      requestBody:
+        description: notification details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationItem'
+        required: true
+      responses:
+        '200':
+          description: Callback successful
+        '400':
+          description: Invalid payload
+	'401':
+          description: Unauthorized #where a token is required
+
+      security: # Optional token authentication header
+        - bearer_auth: []
+
+components:
+  schemas:
+    NotificationItem:
+      type: object
+      additionalProperties: true
+      required: 
+        - notification
+        - filename
+        - dateTime
+        - correlationID
+      properties:
+        notification:
+          type: string
+          enum: 
+            - FileReceived # Indicates that your file has been received into FTS service awaiting processing by the recipient
+            - FileProcessed # Indicates that your file has been successfully processed by the recipient system
+            - FileProcessingFailure # Indicates that an error occurred during the processing of your file. Details of the error is included in the failure reason
+        filename:
+          type: string
+          example: myfilename.doc
+        dateTime:
+          type: string
+          format: date-time
+          example:  1985-04-12T23:20:50.152Z
+        correlationID:
+          type: string
+          format: uuid
+
+   
+  requestBodies:
+    Notitfication:
+      description: The callback notification
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NotificationItem'
+
+  securitySchemes:
+    bearer_auth: 
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
+    
+

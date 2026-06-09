@@ -42,7 +42,7 @@ The UK participates in the exchange of GIR information with willing partner juri
 
 **Related documentation:**
 
-* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/file-transfer-pillars-callbackback-notification-api-spec.txt" download>Callback Notification Schema</a>
 * [OECDPillar2 GloBE Information Return XML Schema](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/01/globe-information-return-pillar-two-xml-schema_3980638f/c594935a-en.pdf)
 * [OECD Pillar2 GloBE Model Rules](https://www.oecd.org/en/publications/tax-challenges-arising-from-digitalisation-of-the-economy-global-anti-base-erosion-model-rules-pillar-two_782bac33-en.html)
 
@@ -54,7 +54,7 @@ You can test the File Upload API integration with your software in the sandbox e
 
 To transfer live files you will need:
 
-* **Service Reference Number (SRN)** to identify your organisation in the system transfer
+* **Pillar 2 ID** to identify your organisation in the system transfer
 * **an information type value** to connect your system transfer to HMRC
 * **a submission URL** generated through the File Upload API
 * **the GIR XML file** to upload and validate through the File Upload API
@@ -63,9 +63,9 @@ To get this information and production credentials to transfer files, you must r
 
 ## Registering to use HMRC APIs
 
-Follow these steps to get access to use HMRC APIs
+Follow these steps to get access to use HMRC APIs:
 
-1. **Register to transfer files securely with HMRC**. Each Multinational Enterprises (MNE) must [register for Pillar 2](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1).
+1. **Register for Pillar 2**. Each Multinational Enterprises (MNE) must [register for Pillar 2](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1).
 
 2. **Register for the Developer Hub**. You must register with the [Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation) to access and set up automated data exchanges with HMRC. The File Upload API can be found in the ‘Other’ category in ‘API documentation’. [Register with the HMRC Developer Hub](https://developer.service.hmrc.gov.uk/developer/registration)
 
@@ -73,7 +73,7 @@ Production credentials for live transfers will only be issued once registration 
 
 ## Getting approval for live transfers
 
-When you’re ready to request approval to take your software with the File Upload API live, follow these steps:
+When you’re ready to request approval to take your software live and enable GIR submissions in production, follow these steps:
 
 1. Sign in to your Developer Hub account
 2. Go to Manage Applications
@@ -113,7 +113,7 @@ When generating the upload URL the request must include the following metadata:
 Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD Schema and Business/Model Rules](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/) and [UK specific Business/ Schema](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/), part of the Pillar 2 API Service Guide. 
 
 ## Endpoints and notifications
-Notifications inform users when a file’s status changes, if they are registered for HMRC’s file transfer service, and linked to an organisation’s transfer. These alerts are sent by email by default. You can set up a RESTful endpoint (see below) to receive callback notifications.
+Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default. You can set up a RESTful endpoint (see below) to receive callback notifications.
 
 ### Endpoints
 Your endpoint must adhere to the following rules:
@@ -173,14 +173,15 @@ Notifies the user when the file transfer has failed, including the reason for fa
 
 **Related documents:**
 
-* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/file-transfer-pillars-callbackback-notification-api-spec.txt" download>Callback Notification Schema</a>
 * [Pillars 2 API Service Guide](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/)
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/Pillar_2_Business_Rules.xlsx" download>Business rules</a>
 
 
 ## Terms of use
 All organisations and their nominated personnel who are using HMRC’s File Upload are subject to the following terms of use:
 
-* [Terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
+* [File transfer terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
 * [Developer Hub terms and conditions](https://developer.service.hmrc.gov.uk/api-documentation/docs/help/terms-and-conditions)
 * [Developer Hub terms of use](https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use)
 
