@@ -1,14 +1,14 @@
 ---
-title: Secure Data Exchange Service (SDES) - Pillar 2 Service Guide
+title: Transferring files to HMRC – Pillar 2 Service Guide
 weight: 1
 ---
 
-# Using the Secure Data Exchange Service (SDES) to Submit GIR for Pillar 2 agreement service guide
+# Service guide: Transfer files securely with HMRC to Submit GIR for Pillar 2 agreement documentation
 
 
 ## Overview
 
-This guide explains the taxes applicable under the Pillar 2 agreement and how to use the SDES File Upload API for sharing documentation and ensuring compliance.
+This guide explains the taxes applicable under the Pillar 2 agreement and how to use the File Upload API for sharing documentation and ensuring compliance.
 
 Contents:
 
@@ -42,37 +42,37 @@ The UK participates in the exchange of GIR information with willing partner juri
 
 **Related documentation:**
 
-* <a href="/guides/pillar2-sdes-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/file-transfer-pillars-callbackback-notification-api-spec.txt" download>Callback Notification Schema</a>
 * [OECDPillar2 GloBE Information Return XML Schema](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/01/globe-information-return-pillar-two-xml-schema_3980638f/c594935a-en.pdf)
 * [OECD Pillar2 GloBE Model Rules](https://www.oecd.org/en/publications/tax-challenges-arising-from-digitalisation-of-the-economy-global-anti-base-erosion-model-rules-pillar-two_782bac33-en.html)
 
 ## How to use HMRC APIs
 
-GloBE Information Returns (GIRs) must be submitted to HMRC using the Secure Data Exchange Service (SDES).
+GloBE Information Returns (GIRs) must be submitted to HMRC using its file transfer service.
 
 You can test the File Upload API integration with your software in the sandbox environment at any time.
 
 To transfer live files you will need:
 
 * **Pillar 2 ID** to identify your organisation in the system transfer
-* **a submission URL** generated through the Secure Data Exchange File Upload API
-* **the GIR XML file** to upload and validate through the Secure Data Exchange File Upload API
+* **a submission URL** generated through the File Upload API
+* **the GIR XML file** to upload and validate through the File Upload API
 
 To get this information and production credentials to transfer files, you must register for the following services.
 
 ## Registering to use HMRC APIs
 
-Follow these steps to get access to use HMRC APIs
+Follow these steps to get access to use HMRC APIs:
 
 1. **Register for Pillar 2**. Each Multinational Enterprises (MNE) must [register for Pillar 2](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1).
 
-2. **Register for the Developer Hub**. You must register with the HMRC Developer Hub to access and set up automated data exchanges with SDES. The SDES ‘File Upload’ API can be found in the ‘Other’ category in ‘API documentation’. [Register with the HMRC Developer Hub](https://developer.service.hmrc.gov.uk/developer/registration)
+2. **Register for the Developer Hub**. You must register with the [Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation) to access and set up automated data exchanges with HMRC. The File Upload API can be found in the ‘Other’ category in ‘API documentation’. [Register with the HMRC Developer Hub](https://developer.service.hmrc.gov.uk/developer/registration)
 
 Production credentials for live transfers will only be issued once registration for these services is complete and the approval process has been successfully followed.
 
 ## Getting approval for live transfers
 
-When you’re ready to request approval to take your software with the SDES File Upload API live, follow these steps:
+When you’re ready to request approval to take your software live and enable GIR submissions in production, follow these steps:
 
 1. Sign in to your Developer Hub account
 2. Go to Manage Applications
@@ -96,7 +96,7 @@ You must follow the formats and instructions below to successfully transfer a fi
 ### Accepted file formats
 All files must be submitted in a .xml format.
 
-Alternative formats may upload to SDES but will fail at the validation stage.
+Alternative formats may upload to HMRC’s file transfer service, but they will fail at the validation stage.
 
 ### Mandatory metadata
 When generating the upload URL the request must include the following metadata:
@@ -117,7 +117,7 @@ Notifications inform users when a file’s status changes, if they are registere
 ### Endpoints
 Your endpoint must adhere to the following rules:
 
-* URL → Any Rest complaint URL e.g. https://mydomain.com/sdes-callback
+* URL → Any Rest complaint URL e.g. https://mydomain.com/my-callback
 * HTTP Method → POST
 * Content-Type → application/json
 * Optional Header → The customer can optionally specify a bearer token for authorisation purposes
@@ -125,13 +125,13 @@ Your endpoint must adhere to the following rules:
 
 
 ### Callback Notification
-Callback notifications tell Secure Data Exchange (SDES) users when a file status changes. The following statuses can be received by email or API notification:
+Callback notifications tell users when a file status has changed. The following statuses can be received by email or API notification:
 
-* FileReceived - The file has passed integrity checks and is stored in SDES
+* FileReceived - The file has passed integrity checks and is stored in HMRC’s file transfer service
 * FileProcessingFailure - The file transfer has failed for the listed reason
 
 ### FileReceived
-This notification tells the user that a file uploaded to or pulled by SDES has been virus-scanned and passed integrity checks. It does not confirm delivery to a named recipient.
+This notification tells the user that a file uploaded to or pulled by HMRC’s file transfer service, has been virus-scanned and passed integrity checks. It does not confirm delivery to a named recipient.
 
 ```json
 {
@@ -172,26 +172,27 @@ Notifies the user when the file transfer has failed, including the reason for fa
 
 **Related documents:**
 
-* <a href="/guides/pillar2-sdes-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/file-transfer-pillars-callbackback-notification-api-spec.txt" download>Callback Notification Schema</a>
 * [Pillars 2 API Service Guide](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/)
+* <a href="/guides/pillar2-transferring-files-with-HMRC-service-guide/downloads/Pillar_2_Business_Rules.xlsx" download>Business rules</a>
 
 
 ## Terms of use
-All organisations and their nominated personnel who are using HMRC’s SDES File Upload API are subject to the following terms of use:
+All organisations and their nominated personnel who are using HMRC’s File Upload are subject to the following terms of use:
 
-* [SDES terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
+* [File transfer terms and conditions](https://sdes.hmrc.gov.uk/sdes/terms-and-conditions)
 * [Developer Hub terms and conditions](https://developer.service.hmrc.gov.uk/api-documentation/docs/help/terms-and-conditions)
 * [Developer Hub terms of use](https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use)
 
 ## Getting help
 
-**Help accessing and using the Secure Data Exchange Service**
+**Help accessing and transferring files securely with HMRC**
 
-For help registering with the Secure Data Exchange (SDES), or for assistance uploading or downloading files, contact the dedicated support team.
+For help registering with the service, or assistance when uploading or downloading files, contact the dedicated support team.
 
 Monday - Friday 9 am - 5.30 pm (excluding Bank Holidays)
 
-Email: [sdessupport@hmrc.gov.uk](mailto:sdessupport@hmrc.gov.uk)
+Email: [filetransfer.support@hmrc.gov.uk](mailto:filetransfer.support@hmrc.gov.uk)
 
 Telephone: 03000 597222
 
@@ -202,5 +203,6 @@ For help accessing your Developer Hub account, or for assistance applying for pr
 ***
 <u>**Version details**</u>
 
+Version 2.0 issued: June 2026
 Version 1.0 issued: November 2025
 
