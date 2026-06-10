@@ -30,7 +30,7 @@ paths:
         '400':
           description: Invalid payload
 	'401':
-          description: Unauthorized #where a token is required
+          description: Unauthorised (relevant when a token is required)
 
       security: # Optional token authentication header
         - bearer_auth: []
