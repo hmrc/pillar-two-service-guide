@@ -1,4 +1,9 @@
 ->      /                                                  health.Routes
-GET     /guides/pillar2-sdes-service-guide           controllers.Default.redirect(to = "/guides/pillar2-sdes-service-guide/")
-GET     /guides/pillar2-sdes-service-guide/          controllers.Assets.at(path="/public", file="index.html")
-GET     /guides/pillar2-sdes-service-guide/*file     controllers.Assets.at(path="/public", file)
+
+GET     /guides/pillar2-sdes-service-guide                    controllers.Default.redirect(to = "/guides/pillar2-sdes-service-guide/")
+GET     /guides/pillar2-sdes-service-guide/                   controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/pillar2-sdes-service-guide/*file              controllers.Assets.at(path="/public", file)
+
+GET     /guides/pillar2-file-transfer-service-guide           controllers.Default.redirect(to = "/guides/pillar2-fts-service-guide/")
+GET     /guides/pillar2-file-transfer-service-guide/          controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/pillar2-file-transfer-service-guide/*file     controllers.Assets.at(path="/public", file)
