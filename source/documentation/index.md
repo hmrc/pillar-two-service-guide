@@ -110,9 +110,7 @@ When generating the upload URL the request must include the following metadata:
 ```
 
 ### File validation
-Files are checked to ensure they contain the expected data and structure. We recommend reading the 
-[OECD published guidance on Pillar 2](https://www.oecd.org/en/topics/sub-issues/global-minimum-tax/global-anti-base-erosion-model-rules-pillar-two.html) 
-and <a href="/guides/pillar2-sdes-service-guide/downloads/Pillar_2_Business_Rules_22.06.xlsx" download>UK specific Business/Schema</a>.
+Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD published guidance on Pillar 2](https://www.oecd.org/en/topics/sub-issues/global-minimum-tax/global-anti-base-erosion-model-rules-pillar-two.html) and <a href="/guides/pillar2-sdes-service-guide/downloads/Pillar_2_Business_Rules_22.06.xlsx" download>UK specific Business/Schema</a>.
 
 ## Endpoints and notifications
 Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default. You can set up a RESTful endpoint (see below) to receive callback notifications.
