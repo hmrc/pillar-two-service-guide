@@ -45,6 +45,7 @@ The UK participates in the exchange of GIR information with willing partner juri
 * <a href="/guides/pillar2-sdes-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
 * [OECDPillar2 GloBE Information Return XML Schema](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/01/globe-information-return-pillar-two-xml-schema_3980638f/c594935a-en.pdf)
 * [OECD Pillar2 GloBE Model Rules](https://www.oecd.org/en/publications/tax-challenges-arising-from-digitalisation-of-the-economy-global-anti-base-erosion-model-rules-pillar-two_782bac33-en.html)
+* <a href="/guides/pillar2-sdes-service-guide/downloads/Pillar_2_Business_Rules_22.06.xlsx" download>UK specific Business/Schema</a>
 
 ## How to use HMRC APIs
 
@@ -72,7 +73,7 @@ Production credentials for live transfers will only be issued once registration 
 
 ## Getting approval for live transfers
 
-When you’re ready to request approval to take your software with the SDES File Upload API live, follow these steps:
+When you’re ready to request approval to take your software live and enable GIR submissions in production, follow these steps:
 
 1. Sign in to your Developer Hub account
 2. Go to Manage Applications
@@ -109,7 +110,10 @@ When generating the upload URL the request must include the following metadata:
 ```
 
 ### File validation
-Files are checked to ensure they contain the expected data and structure. We recommend reading the [OECD Schema and Business/Model Rules](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/) and [UK specific Business/ Schema](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/), part of the Pillar 2 API Service Guide. 
+Files are checked to ensure they contain the expected data and structure. 
+
+Files are checked to ensure they contain the expected data and structure. We recommend reading [the OECD published guidance on Pillar 2](https://www.oecd.org/en/topics/sub-issues/global-minimum-tax/global-anti-base-erosion-model-rules-pillar-two.html) and
+<a href="/guides/pillar2-sdes-service-guide/downloads/Pillar_2_Business_Rules_22.06.xlsx" download>UK specific Business/Schema</a>
 
 ## Endpoints and notifications
 Notifications inform users when a file’s status changes, if they are registered for Pillar 2 and linked to an organisation’s transfer. These alerts are sent by email by default. You can set up a RESTful endpoint (see below) to receive callback notifications.
@@ -174,6 +178,7 @@ Notifies the user when the file transfer has failed, including the reason for fa
 
 * <a href="/guides/pillar2-sdes-service-guide/downloads/notification-schema.json" download>Callback Notification Schema</a>
 * [Pillars 2 API Service Guide](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/)
+* <a href="/guides/pillar2-sdes-service-guide/downloads/Pillar_2_Business_Rules_22.06.xlsx" download>UK specific Business/Schema</a>
 
 
 ## Terms of use
