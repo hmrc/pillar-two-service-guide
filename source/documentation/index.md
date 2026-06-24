@@ -205,4 +205,5 @@ For help accessing your Developer Hub account, or for assistance applying for pr
 <u>**Version details**</u>
 
 Version 1.0 issued: November 2025
+Version 1.1 issued: June 2026
 
