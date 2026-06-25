@@ -1,8 +1,8 @@
 # Human read-able name for this site, displayed in the header bar
-service_name: Transferring files to HMRC – Pillar 2 Service Guide
+service_name: Secure Data Exchange Service (SDES) - Pillar 2 Service Guide
 
 # The route that will be used to access this site (with tailing slash)
-service_link: /guides/pillar2-file-transfer-service-guide/
+service_link: /guides/pillar2-sdes-service-guide/
 use_service_link_for_favicon: true
 
 # ================================================
